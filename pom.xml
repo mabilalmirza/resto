@@ -6,7 +6,17 @@
 
     <groupId>com.bilmir.resto</groupId>
     <artifactId>resto</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1</version>
+    <modules>
+        <module>resto-core</module>
+        <module>resto-annotations</module>
+        <module>resto-clients-runtime</module>
+        <module>resto-clients-codegen</module>
+        <module>resto-impl-finagle</module>
+        <module>resto-impl-okhttp</module>
+        <module>resto-impl-unirest</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -14,5 +24,24 @@
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.10</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.4</version>
+                <scope>compile</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
 </project>
